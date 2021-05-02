@@ -1,6 +1,7 @@
 const path = require('path');
 const rootDir = require('../util/path');
 const express = require('express');
+const fs = require('fs');
 
 const router = express.Router();
 
@@ -16,6 +17,7 @@ router.get("/add-product", (req, res, next) => {
 
 // /admin/add-product => POST
 router.post("/add-product", (req, res, next) =>{ //it has the same name, but the method changes
+
     products.push({title: req.body.title, summary: req.body.summary});
     res.redirect('/');
 });
