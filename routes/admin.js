@@ -16,7 +16,7 @@ router.get("/add-product", (req, res, next) => {
 
 // /admin/add-product => POST
 router.post("/add-product", (req, res, next) =>{ //it has the same name, but the method changes
-    products.push({title: req.body.title});
+    products.push({title: req.body.title, summary: req.body.summary});
     res.redirect('/');
 });
 

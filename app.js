@@ -16,6 +16,8 @@ app.set('views', 'views'); // this is the default. I wrote it anyway.
 const adminData = require('./routes/admin');
 const shopRouters = require('./routes/shop');
 
+app.use(compression()); //this is for heroku
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
